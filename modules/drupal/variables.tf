@@ -1,6 +1,6 @@
 variable "mysql_version" {
   description = "The version of the Mysql Shell."
-  default     = "8.0.21"
+  default     = "8.0.22"
 }
 
 variable "compartment_ocid" {
@@ -24,7 +24,7 @@ variable "subnet_id" {
 
 variable "shape" {
   description = "Instance shape to use for master instance. "
-  default     = "VM.Standard2.1"
+  default     = "VM.Standard.E2.1"
 }
 
 variable "label_prefix" {
