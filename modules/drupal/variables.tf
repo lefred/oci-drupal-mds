@@ -1,15 +1,15 @@
 variable "mysql_version" {
   description = "The version of the Mysql Shell."
-  default     = "8.0.22"
+  default     = "8.0.23"
 }
 
 variable "compartment_ocid" {
   description = "Compartment's OCID where VCN will be created. "
 }
 
-variable "availability_domain" {
+variable "availability_domains" {
   description = "The Availability Domain of the instance. "
-  default     = ""
+  default     = []
 }
 
 variable "display_name" {
@@ -24,7 +24,7 @@ variable "subnet_id" {
 
 variable "shape" {
   description = "Instance shape to use for master instance. "
-  default     = "VM.Standard.E2.1"
+  default     = "VM.Standard2.1"
 }
 
 variable "label_prefix" {
@@ -57,15 +57,15 @@ variable "vm_user" {
   default     = "opc"
 }
 
-variable "drupal_name" {
+variable "dp_name" {
   description = "Drupal Database User Name."
 }
 
-variable "drupal_password" {
+variable "dp_password" {
   description = "Drupal Database User Password."
 }
 
-variable "drupal_schema" {
+variable "dp_schema" {
   description = "Drupal MySQL Schema"
 }
 
@@ -80,4 +80,21 @@ variable "admin_password" {
 
 variable "mds_ip" {
     description = "Private IP of the MDS Instance"
+}
+
+variable "nb_of_webserver" {
+    description = "Amount of Webservers to deploy"
+    default = 1
+}
+
+variable "use_AD" {
+  description = "Using different Availability Domain, by default use of Fault Domain"
+  type        = bool
+  default     = false
+}
+
+variable "dedicated" {
+  description = "Create a dedicated user and a dedicated database for each Webservers"
+  type        = bool
+  default     = false
 }

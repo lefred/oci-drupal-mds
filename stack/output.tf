@@ -3,11 +3,7 @@ output "drupal_public_ip" {
 }
 
 output "drupal_db_user" {
-  value = module.drupal.drupal_user_name
-}
-
-output "drupal_schema" {
-  value = module.drupal.drupal_schema_name
+  value = var.dp_name
 }
 
 output "drupal_db_password" {
@@ -15,7 +11,7 @@ output "drupal_db_password" {
 }
 
 output "mds_instance_ip" {
-  value = module.mds-instance.private_ip
+  value =  module.mds-instance.private_ip
 }
 
 output "ssh_private_key" {
