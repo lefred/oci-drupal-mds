@@ -1,7 +1,7 @@
 title: "Drupal on OCI with MDS"
-dscription: "Drupal on OCI with MySQL Database Service"
-schemaVersion: 1.4.0
-version: "20210218"
+description: "Drupal on OCI with MySQL Database Service"
+schemaVersion: 1.5.0
+version: "20210420"
 locale: "en"
 
 
@@ -26,6 +26,11 @@ variableGroups:
       - dp_name
       - dp_password
       - dp_schema
+
+  - title: Use HA for MDS
+    visibale: true
+    variables:
+      - deploy_mds_ha        
 
   - title: Webservers
     visible: true
@@ -204,6 +209,10 @@ variables:
     description: Password for MySQL Database Service's admin user
     pattern: "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\\\"\\\\|,.<>\\/?]).{8,32}$"
 
+  deploy_mds_ha:
+    title: Deploy High Availability for MDS
+    type: boolean
+    default: fals
 
   dp_password:
     type: password
