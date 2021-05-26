@@ -182,3 +182,13 @@ variable "deploy_mds_ha" {
   type        = bool
   default     = false
 }
+
+variable "node_flex_shape_ocpus" {
+  description = "Flex Instance shape OCPUs"
+  default = 1
+}
+
+variable "node_flex_shape_memory" {
+  description = "Flex Instance shape Memory (GB)"
+  default = 6
+}

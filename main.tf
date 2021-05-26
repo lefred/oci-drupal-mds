@@ -250,5 +250,7 @@ module "drupal" {
   nb_of_webserver       = var.nb_of_webserver
   use_AD                = var.use_AD
   dedicated             = var.dedicated
+  flex_shape_ocpus      = var.node_flex_shape_ocpus
+  flex_shape_memory     = var.node_flex_shape_memory
 }
 
