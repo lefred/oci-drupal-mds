@@ -1,7 +1,7 @@
 title: "Drupal on OCI with MDS"
 description: "Drupal on OCI with MySQL Database Service"
-schemaVersion: 1.7.0
-version: "20210905"
+schemaVersion: 1.9.0
+version: "20221222"
 locale: "en"
 
 
@@ -15,6 +15,12 @@ variableGroups:
       - ssh_authorized_keys_path
       - ssh_private_key_path
       - private_key_path
+      - dns_label
+      - fingerprint
+      - label_prefix
+      - node_image_id
+      - user_ocid
+
 
   - title: Required Variables
     visible: true
@@ -116,7 +122,7 @@ variables:
     minimum: 1
     maximum: 128
     multipleOf: 1
-    default: 6
+    default: 16
     title: "Flex Shape Memory (GB)"
     description: "Choose number GB for Flex Shape Memory."
     visible:
@@ -141,7 +147,7 @@ variables:
     minimum: 1
     maximum: 128
     multipleOf: 1
-    default: 1
+    default: 4 
     title: "Flex Shape OCPUs"
     description: "Choose number of OCPUs for Flex Shape."
     visible:

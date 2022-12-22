@@ -1,6 +1,6 @@
 variable "mysql_version" {
   description = "The version of the Mysql Shell."
-  default     = "8.0.28"
+  default     = "8.0.31"
 }
 
 variable "compartment_ocid" {
@@ -24,7 +24,7 @@ variable "subnet_id" {
 
 variable "shape" {
   description = "Instance shape to use for master instance. "
-  default     = "VM.Standard2.1"
+  default     = "VM.Standard.A1.Flex"
 }
 
 variable "label_prefix" {
@@ -101,12 +101,12 @@ variable "dedicated" {
 
 variable "flex_shape_ocpus" {
   description = "Flex Instance shape OCPUs"
-  default = 1
+  default = 4
 }
 
 variable "flex_shape_memory" {
   description = "Flex Instance shape Memory (GB)"
-  default = 6
+  default = 16
 }
 
 locals {
